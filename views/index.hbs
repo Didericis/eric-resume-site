@@ -1,4 +1,24 @@
-<div id="Header"></div>
-<div id="Content"></div>
-<script src={{requirejs}}></script>
-<script src={{app}}></script>
+<div id="Header">
+    <div class="header">
+        <div id="HexaMenu">
+            {{{menuItem0}}}
+            {{{menuItem1}}}
+            {{{menuItem2}}}
+        </div>
+        <div class="header-middle">
+            {{{menuItemCenter}}}
+        </div>
+        <div class="header-bottom"></div>
+    </div>
+</div>
+<div id="Content">
+    <div id="temp-div"></div>
+</div>
+<script>
+    initializeHexaMenu({
+        "Home": "/home",
+        "Projects": "/projects",
+        "Blog": "/blog",
+        "Contact": "/contact"
+    });
+</script>

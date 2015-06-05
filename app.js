@@ -5,8 +5,6 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var routes = require('./routes/index');
-
 var app = express();
 
 // view engine setup
@@ -21,7 +19,69 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
+var pages = ["home", "contact", "blog", "projects"];
+
+app.get('/', function(req, res, next) {
+  renderMenu(res);
+});
+
+for (var i in pages){
+  routePage(pages[i]);
+}
+
+function renderMenu(res){
+  renderMenuItems([{
+    id: "Home",
+    icon: "/img/homeIcon.png",
+    layout: false
+  },
+  {
+    id: "Projects",
+    icon: "/img/projectsIcon.png",
+    layout: false
+  },
+  {
+    id: "Blog",
+    icon: "/img/blogIcon.png",
+    layout: false
+  },
+  {
+    id: "Contact",
+    icon: "/img/contactIcon.png",
+    layout: false
+  }], function(home, projects, blog, contact){
+    res.render('index', { title: 'Didericis.com', 
+      menuItemCenter: home,
+      menuItem0: projects,
+      menuItem1: blog,
+      menuItem2: contact
+    });
+  });
+}
+
+function renderMenuItems(menuItemArray, callback){
+  app.render('menuItem', menuItemArray[0], function(err, html0){
+    app.render('menuItem', menuItemArray[1], function(err, html1){
+      app.render('menuItem', menuItemArray[2], function(err, html2){
+        app.render('menuItem', menuItemArray[3], function(err, html3){
+          callback(html0, html1, html2, html3);
+        });
+      });
+    });
+  });
+}
+
+function routePage(pageName){
+  app.get('/'+pageName, function(req, res, next) {
+    if (!req.query.menu){ renderMenu(res); }
+    else{ res.render(pageName); }
+  });
+  app.post('/'+pageName, function(req, res, next) {
+    if (!req.body.menu){ renderMenu(res); }
+    else{ res.render(pageName); }
+  });
+}
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

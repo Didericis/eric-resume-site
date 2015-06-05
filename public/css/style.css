@@ -1,8 +1,174 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+a {
+    color: #0B617F;
 }
 
-a {
-  color: #00B7FF;
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+}
+
+h {
+    font-family: 'Amatic SC', cursive;
+    font-size: 32px;
+    color: white;
+    float: none;
+    display: block;
+    text-align: center;
+    width: 100%;
+    padding-bottom: 25px;
+    padding-top: 25px;
+}
+
+ul {
+    color: gray;
+}
+
+#Content {
+    margin-right: auto;
+    margin-left: auto;
+    width: 80%;
+}
+
+.about-section {
+    padding-left: 75px;
+    padding-right: 75px;
+    overflow: auto;
+}
+
+.about-section ul {
+    float: top;
+    padding-left: 50px;
+}
+
+.blog-entry {
+    padding-bottom: 20px;
+}
+
+.blog-entry h {
+    padding-bottom: 20px;
+    font-family: 'Amatic SC', cursive;
+}
+
+.introduction {
+    overflow: auto;
+    margin-left: auto;
+    margin-right: auto;
+/*    margin-top: 40px;*/
+    width: 70%;
+    max-width: 500px;
+}
+
+.introduction img {
+    float: left;
+    width: 30%;
+    max-width: 110px;
+    margin: 10px;
+}
+
+.introduction p {
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 18px;
+    margin-top: 10px;
+    height: 100%;
+}
+
+.contact {
+    float: left;
+    display: block;
+    width: 33%;
+}
+
+.contact p {
+    color: white;
+    display: block;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.contact img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+    height: 100px;
+}
+
+.project {
+    padding-top: 50px;
+}
+
+.project h {
+    float: left;
+}
+
+.separator {
+    width: 100%;
+    height: 20px;
+    float: left;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.separator.colored {
+    background-color: #333; 
+}
+
+.skill {
+    float: left;
+    width: 33%;
+    text-align: center;
+}
+
+.skill ul {
+    list-style-type: none;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.temp-div {
+    display: none;
+}
+
+.text-container {
+    float: left;
+    width: 100%;
+}
+
+.text-container.center p{
+    float: none;
+    text-align: center;
+}
+
+.text-container h {
+    font-family: 'Amatic SC', cursive;
+    color: white;
+    float: none;
+    display: block;
+    text-align: center;
+    width: 100%;
+    padding-bottom: 10px;
+}
+
+.text-container p {
+    margin-top: 0px;
+    float: left;
+}
+
+.text-container img {
+    float: left;
+    margin: 10px;
+}
+
+@media screen and (max-width: 540px){
+    .contact p {
+        display: none;
+    }
+
+    .about-section{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
 }
