@@ -56,20 +56,21 @@ ul {
     margin-left: auto;
     margin-right: auto;
 /*    margin-top: 40px;*/
-    width: 70%;
-    max-width: 500px;
+    width: 80%;
+    max-width: 650px;
 }
 
 .introduction img {
     float: left;
-    width: 30%;
-    max-width: 110px;
+/*    width: 30%;*/
+    max-width: 250px;
     margin: 10px;
+    margin-bottom: 0px;
 }
 
 .introduction p {
     font-family: 'Shadows Into Light', cursive;
-    font-size: 18px;
+    font-size: 30px;
     margin-top: 10px;
     height: 100%;
 }
@@ -115,13 +116,13 @@ ul {
     background-color: #333; 
 }
 
-.skill {
+.skills {
     float: left;
     width: 33%;
     text-align: center;
 }
 
-.skill ul {
+.skills ul {
     list-style-type: none;
     margin: 0 auto;
     padding: 0;
@@ -169,6 +170,26 @@ ul {
     .about-section{
         padding-left: 0px;
         padding-right: 0px;
+    }
+
+    .introduction img {
+        float: none;
+        margin: 0 auto;
+        display: block;
+        width: 85%;
+        max-width: 250px;
+    }
+
+    .introduction p {
+        font-size: 18px;
+    }
+
+    .skill-info img {
+        width: 40px;
+    }
+
+    .skill-info p {
+        font-size: 16px;
     }
 
 }
