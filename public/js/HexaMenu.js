@@ -5,7 +5,11 @@ function initializeHexaMenu(menuContent){
     var doneMoving = true;
 
     $("#Content").load(centerMenuItem.content, {menu: true}, function(){
-        window.history.pushState(centerMenuItem.name, centerMenuItem.name, centerMenuItem.content);
+        window.history.pushState(
+            centerMenuItem.name, 
+            centerMenuItem.name, 
+            centerMenuItem.content
+        );
     });
 
     $(".menu-item").click(function(){
@@ -57,11 +61,11 @@ function initializeHexaMenu(menuContent){
         var xDestination = xOfMid - xOfThis;
         var doneMovingCenterItem = true;
         var doneMovingActivatedItem = true;
-        var tempDiv = document.createElement("div");
+        var temp = document.createElement("div");
         
-        tempDiv.className = "temp-div";
-        $(contentDiv).append(tempDiv);
-        $(tempDiv).load(activatedMenuItem.content, {menu: true});
+        temp.className = "temp-div";
+        contentDiv.append(temp);
+        $(temp).load(activatedMenuItem.content, {menu: true});
 
         swap();
 
@@ -104,7 +108,7 @@ function initializeHexaMenu(menuContent){
                             $(activatedButton).removeAttr("style");
                             $(headerMiddle).append(activatedButton);
                             centerMenuItem = activatedMenuItem;
-                            $(contentDiv).html($(tempDiv).html());
+                            contentDiv.html($(temp).html());
                             doneMovingCenterItem = true;
                             doneMoving = doneMovingCenterItem && doneMovingActivatedItem;
                             window.history.pushState(activatedMenuItem.name, activatedMenuItem.name, activatedMenuItem.content);
