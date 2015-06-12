@@ -9,7 +9,7 @@ body {
     font-size: 18px;
 }
 
-h {
+h1, h2 {
     font-family: 'Amatic SC', cursive;
     font-size: 32px;
     color: white;
@@ -100,7 +100,7 @@ ul {
     padding-top: 50px;
 }
 
-.project h {
+.project h2 {
     float: left;
 }
 
@@ -142,7 +142,7 @@ ul {
     text-align: center;
 }
 
-.text-container h {
+.text-container h2 {
     font-family: 'Amatic SC', cursive;
     color: white;
     float: none;

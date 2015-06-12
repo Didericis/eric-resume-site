@@ -4,13 +4,13 @@ function initializeHexaMenu(menuContent){
     var centerMenuItem = menuItems[centerMenuItemName];
     var doneMoving = true;
 
-    $("#Content").load(centerMenuItem.content, {menu: true}, function(){
-        window.history.pushState(
-            centerMenuItem.name, 
-            centerMenuItem.name, 
-            centerMenuItem.content
-        );
-    });
+    // $("#Content").load(centerMenuItem.content, {menu: true}, function(){
+    //     window.history.pushState(
+    //         centerMenuItem.name, 
+    //         centerMenuItem.name, 
+    //         centerMenuItem.content
+    //     );
+    // });
 
     $(".menu-item").click(function(){
         if (doneMoving){ activateButton(getMenuItem(this)); }
@@ -65,8 +65,7 @@ function initializeHexaMenu(menuContent){
         
         temp.className = "temp-div";
         contentDiv.append(temp);
-        $(temp).load(activatedMenuItem.content, {menu: true});
-
+        $(temp).load(activatedMenuItem.content + " #Content");
         swap();
 
         function swap(){

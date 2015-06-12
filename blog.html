@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Eric Bauerfeld</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel='stylesheet' href='/css/style.css'/>
+        <link rel='stylesheet' href='/css/hexaMenu.css'/>
+        <link href='//fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Reenie+Beanie' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+        <script src="js/HexaMenu.js"></script>
+    </head>
+    <body>
+        <div id="Header">
+            <div class="header">
+                <div id="HexaMenu" class="menu">
+                    <div id="Projects" class="menu-item">
+                        <div class="menu-item-top"></div>
+                        <div class="menu-item-middle">
+                            <img src="/img/projectsIcon.png">
+                        </div>
+                        <div class="menu-item-bottom"></div>
+                    </div>
+                    <div id="Contact" class="menu-item">
+                        <div class="menu-item-top"></div>
+                        <div class="menu-item-middle">
+                            <img src="/img/contactIcon.png">
+                        </div>
+                        <div class="menu-item-bottom"></div>
+                    </div>
+                    <div id="Home" class="menu-item">
+                        <div class="menu-item-top"></div>
+                        <div class="menu-item-middle">
+                            <img src="/img/homeIcon.png">
+                        </div>
+                        <div class="menu-item-bottom"></div>
+                    </div>
+                </div>
+                <div class="header-middle">
+                    <div id="Blog" class="menu-item">
+                        <div class="menu-item-top"></div>
+                        <div class="menu-item-middle">
+                            <img src="/img/blogIcon.png">
+                        </div>
+                        <div class="menu-item-bottom"></div>
+                    </div>
+                </div>
+                <div class="header-bottom"></div>
+            </div>
+        </div>
+        <div id="Content">
+            <h1>Blog</h1>
+            <section class="blog-entry" id="smooth-page-loading">
+                <h2>2015-06-04: Smooth Page Loading</h2>
+                <p>
+                    I often get annoyed at sites that don't render smoothly; I'm a big fan of clean page loads, even if it takes a bit longer before things are displayed. The traditional wisdom of "let the user know something's happening" often translates to "load everything as it comes in", which often leads to things jumping around while resources load. Status bars solve this problem, but users tend to find them even more annoying than the style changes that often result from dynamic loading.
+                </p>
+                <p>
+                    While I was building this site, I wanted to have a cool animation for the menu header. Even though it would take a bit more time than a traditional menu, I made it move relatively quickly, and for the type of content I provide, I figure a slight delay in favor of aesthetics would be acceptable. I then realized I might be able to use that time to do some loading.
+                </p>
+                <p>
+                    Because the menu animation does not specifically designate a page load, the transitions feel much more "natural" to me than a status bar. I'd love to do a test on a wider number of users to see if this is generally true, or just true of me. I'm sure others have come up with a similar loading scheme, and out of those a few have probably already tested how users respond. Hopefully I can find out so I know whether or not to use similar animations in the future.
+                </p>
+            </section>
+        </div>
+    </body>
+    <script>
+        $(document).ready(function(){
+            initializeHexaMenu({
+                "Home": "/index.html",
+                "Projects": "/projects.html",
+                "Blog": "/blog.html",
+                "Contact": "/contact.html"
+            });
+        })
+    </script>
+</html>
