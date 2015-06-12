@@ -18,7 +18,7 @@ h1, h2 {
     text-align: center;
     width: 100%;
     padding-bottom: 25px;
-    padding-top: 25px;
+    padding-top: 25px;   
 }
 
 ul {
@@ -32,10 +32,13 @@ ul {
 }
 
 .about-section {
-    padding-left: 75px;
-    padding-right: 75px;
+    width: 100%;
     overflow: auto;
 }
+
+/*.about-section p {
+    width: 80%;
+}*/
 
 .about-section ul {
     float: top;
@@ -55,14 +58,11 @@ ul {
     overflow: auto;
     margin-left: auto;
     margin-right: auto;
-/*    margin-top: 40px;*/
-    width: 80%;
     max-width: 650px;
 }
 
 .introduction img {
     float: left;
-/*    width: 30%;*/
     max-width: 250px;
     margin: 10px;
     margin-bottom: 0px;
@@ -97,11 +97,28 @@ ul {
 }
 
 .project {
-    padding-top: 50px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: auto;
 }
 
-.project h2 {
+#Project-PEN {
+    max-width: 615px;
+}
+
+#Project-SanusAnalytics {
+    max-width: 820px;
+}
+
+.project p {
+    margin-top: 0px;
     float: left;
+}
+
+.project img {
+    float: left;
+    padding-right: 15px;
 }
 
 .separator {
@@ -118,7 +135,7 @@ ul {
 
 .skills {
     float: left;
-    width: 33%;
+    width: 33.33333%;
     text-align: center;
 }
 
@@ -162,7 +179,7 @@ ul {
     margin: 10px;
 }
 
-@media screen and (max-width: 540px){
+@media screen and (max-width: 600px){
     .contact p {
         display: none;
     }
@@ -176,12 +193,18 @@ ul {
         float: none;
         margin: 0 auto;
         display: block;
-        width: 85%;
+        width: 50%;
         max-width: 250px;
+        padding-bottom: 20px;
     }
 
     .introduction p {
         font-size: 18px;
+    }
+
+    .project img {
+        width: 100%;
+        padding-bottom: 40px;
     }
 
     .skill-info img {

@@ -13,7 +13,8 @@ function initializeHexaMenu(menuContent){
     // });
 
     $(".menu-item").click(function(){
-        if (doneMoving){ activateButton(getMenuItem(this)); }
+        var isMiddle = $(this).parent().hasClass("header-middle");
+        if (doneMoving && !isMiddle){ activateButton(getMenuItem(this)); }
     });
 
     function getMenuItems(){
@@ -107,7 +108,7 @@ function initializeHexaMenu(menuContent){
                             $(activatedButton).removeAttr("style");
                             $(headerMiddle).append(activatedButton);
                             centerMenuItem = activatedMenuItem;
-                            contentDiv.html($(temp).html());
+                            contentDiv.html($(temp).find("#Content").html());
                             doneMovingCenterItem = true;
                             doneMoving = doneMovingCenterItem && doneMovingActivatedItem;
                             window.history.pushState(activatedMenuItem.name, activatedMenuItem.name, activatedMenuItem.content);
