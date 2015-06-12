@@ -3,62 +3,60 @@
     <head>
         <title>Eric Bauerfeld</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="/img/favicon.ico" rel="shortcut icon" type="image/x-icon">
         <link rel='stylesheet' href='/css/style.css'/>
         <link rel='stylesheet' href='/css/hexaMenu.css'/>
         <link href='//fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
         <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
-        <link href='//fonts.googleapis.com/css?family=Reenie+Beanie' rel='stylesheet' type='text/css'>
         <link href='//fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
         <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
         <script src="js/HexaMenu.js"></script>
     </head>
     <body>
-        <div id="Header">
-            <div class="header">
-                <div id="HexaMenu" class="menu">
-                    <div id="Home" class="menu-item">
-                        <div class="menu-item-top"></div>
-                        <div class="menu-item-middle">
-                            <img src="/img/homeIcon.png">
-                        </div>
-                        <div class="menu-item-bottom"></div>
+        <div id="Header" class="header">
+            <div id="HexaMenu" class="menu">
+                <div id="Home" class="menu-item">
+                    <div class="menu-item-top"></div>
+                    <div class="menu-item-middle">
+                        <img src="/img/homeIcon.png">
                     </div>
-                    <div id="Resume" class="menu-item">
-                        <div class="menu-item-top"></div>
-                        <div class="menu-item-middle">
-                            <img src="/img/resumeIcon.png">
-                        </div>
-                        <div class="menu-item-bottom"></div>
-                    </div>
-                    <div id="Projects" class="menu-item">
-                        <div class="menu-item-top"></div>
-                        <div class="menu-item-middle">
-                            <img src="/img/projectsIcon.png">
-                        </div>
-                        <div class="menu-item-bottom"></div>
-                    </div>
-                    <div id="Contact" class="menu-item">
-                        <div class="menu-item-top"></div>
-                        <div class="menu-item-middle">
-                            <img src="/img/contactIcon.png">
-                        </div>
-                        <div class="menu-item-bottom"></div>
-                    </div>
+                    <div class="menu-item-bottom"></div>
                 </div>
-                <div class="header-middle">
-                    <div id="Blog" class="menu-item">
-                        <div class="menu-item-top"></div>
-                        <div class="menu-item-middle">
-                            <img src="/img/blogIcon.png">
-                        </div>
-                        <div class="menu-item-bottom"></div>
+                <div id="Resume" class="menu-item">
+                    <div class="menu-item-top"></div>
+                    <div class="menu-item-middle">
+                        <img src="/img/resumeIcon.png">
                     </div>
+                    <div class="menu-item-bottom"></div>
                 </div>
-                <div class="header-bottom"></div>
+                <div id="Toolbox" class="menu-item">
+                    <div class="menu-item-top"></div>
+                    <div class="menu-item-middle">
+                        <img src="/img/toolboxIcon.png">
+                    </div>
+                    <div class="menu-item-bottom"></div>
+                </div>
+                <div id="Contact" class="menu-item">
+                    <div class="menu-item-top"></div>
+                    <div class="menu-item-middle">
+                        <img src="/img/contactIcon.png">
+                    </div>
+                    <div class="menu-item-bottom"></div>
+                </div>
             </div>
+            <div class="header-middle">
+                <div id="Blog" class="menu-item">
+                    <div class="menu-item-top"></div>
+                    <div class="menu-item-middle">
+                        <img src="/img/blogIcon.png">
+                    </div>
+                    <div class="menu-item-bottom"></div>
+                </div>
+            </div>
+            <div class="header-bottom"></div>
         </div>
-        <div id="Content">
+        <div id="Content" class="content">
             <h1>Blog</h1>
             <section class="blog-entry" id="smooth-page-loading">
                 <h2>2015-06-04: Smooth Page Loading</h2>
@@ -78,7 +76,7 @@
         $(document).ready(function(){
             initializeHexaMenu({
                 "Home": "/index.html",
-                "Projects": "/projects.html",
+                "Toolbox": "/toolbox.html",
                 "Blog": "/blog.html",
                 "Contact": "/contact.html",
                 "Resume": "/resume.html"

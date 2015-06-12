@@ -10,48 +10,103 @@ body {
 }
 
 h1, h2 {
+    color: white;
     font-family: 'Amatic SC', cursive;
     font-size: 32px;
-    color: white;
-    float: none;
-    display: block;
-    text-align: center;
-    width: 100%;
     padding-bottom: 25px;
-    padding-top: 25px;   
+    padding-top: 25px;  
+    text-align: center;
+    width: 100%; 
 }
 
 ul {
     color: gray;
 }
 
-#Content {
+#Blog .menu-item-top {
+    border-bottom-color: #5E5E0C;
+}
+
+#Blog .menu-item-middle {
+    background-color: #5E5E0C;
+}
+
+#Blog .menu-item-bottom {
+    border-top-color: #5E5E0C;
+}
+
+#Contact .menu-item-top {
+    border-bottom-color: #6B1912;
+}
+
+#Contact .menu-item-middle {
+    background-color: #6B1912;
+}
+
+#Contact .menu-item-bottom {
+    border-top-color: #6B1912;
+}
+
+#Home .menu-item-top {
+    border-bottom-color: #064C16;
+}
+
+#Home .menu-item-middle {
+    background-color: #064C16;
+}
+
+#Home .menu-item-bottom {
+    border-top-color: #064C16;
+}
+
+#Project-PEN {
+    max-width: 700px;
+}
+
+#Project-SanusAnalytics {
+    max-width: 900px;
+}
+
+#Resume .menu-item-top {
+    border-bottom-color: #843500;
+}
+
+#Resume .menu-item-middle {
+    background-color: #843500;
+}
+
+#Resume .menu-item-bottom {
+    border-top-color: #843500;
+}
+
+#Toolbox .menu-item-top {
+    border-bottom-color: #0B617F;
+}
+
+#Toolbox .menu-item-middle {
+    background-color: #0B617F;
+}
+
+#Toolbox .menu-item-bottom {
+    border-top-color: #0B617F;
+}
+
+.content {
     margin-right: auto;
     margin-left: auto;
+    margin-top: 20px;
     width: 80%;
 }
 
-.about-section {
-    width: 100%;
-    overflow: auto;
+.contact {
+    float: left;
+    width: 33.33333%;
+    text-align: center;
 }
 
-/*.about-section p {
-    width: 80%;
-}*/
-
-.about-section ul {
-    float: top;
-    padding-left: 50px;
-}
-
-.blog-entry {
-    padding-bottom: 20px;
-}
-
-.blog-entry h {
-    padding-bottom: 20px;
-    font-family: 'Amatic SC', cursive;
+.contact img {
+    width: 100px;
+    height: 100px;
 }
 
 .introduction {
@@ -63,52 +118,22 @@ ul {
 
 .introduction img {
     float: left;
-    max-width: 250px;
     margin: 10px;
     margin-bottom: 0px;
+    max-width: 250px;
 }
 
 .introduction p {
+    height: 100%;
     font-family: 'Shadows Into Light', cursive;
     font-size: 30px;
-    margin-top: 10px;
-    height: 100%;
-}
-
-.contact {
-    float: left;
-    display: block;
-    width: 33.33333%;
-}
-
-.contact p {
-    color: white;
-    display: block;
-    text-align: center;
-    margin-bottom: 0;
-}
-
-.contact img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100px;
-    height: 100px;
+    margin-top: 0px;
 }
 
 .project {
-    width: 100%;
     margin-left: auto;
     margin-right: auto;
     overflow: auto;
-}
-
-#Project-PEN {
-    max-width: 615px;
-}
-
-#Project-SanusAnalytics {
-    max-width: 820px;
 }
 
 .project p {
@@ -119,18 +144,6 @@ ul {
 .project img {
     float: left;
     padding-right: 15px;
-}
-
-.separator {
-    width: 100%;
-    height: 20px;
-    float: left;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-.separator.colored {
-    background-color: #333; 
 }
 
 .skills {
@@ -149,44 +162,9 @@ ul {
     display: none;
 }
 
-.text-container {
-    float: left;
-    width: 100%;
-}
-
-.text-container.center p{
-    float: none;
-    text-align: center;
-}
-
-.text-container h2 {
-    font-family: 'Amatic SC', cursive;
-    color: white;
-    float: none;
-    display: block;
-    text-align: center;
-    width: 100%;
-    padding-bottom: 10px;
-}
-
-.text-container p {
-    margin-top: 0px;
-    float: left;
-}
-
-.text-container img {
-    float: left;
-    margin: 10px;
-}
-
-@media screen and (max-width: 600px){
+@media screen and (max-width: 800px){
     .contact p {
         display: none;
-    }
-
-    .about-section{
-        padding-left: 0px;
-        padding-right: 0px;
     }
 
     .introduction img {
@@ -204,6 +182,7 @@ ul {
 
     .project img {
         width: 100%;
+        padding-right: 0px;
         padding-bottom: 40px;
     }
 

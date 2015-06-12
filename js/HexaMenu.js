@@ -1,16 +1,13 @@
 function initializeHexaMenu(menuContent){
+    var headerBottomClass = ".header-bottom";
+    var headerMiddleClass = ".header-middle";
+    var menuClass = ".menu";
+    var contentClass = ".content";
+
     var centerMenuItemName = $(".header-middle").find(".menu-item").toArray()[0].id;
     var menuItems = getMenuItems();
     var centerMenuItem = menuItems[centerMenuItemName];
     var doneMoving = true;
-
-    // $("#Content").load(centerMenuItem.content, {menu: true}, function(){
-    //     window.history.pushState(
-    //         centerMenuItem.name, 
-    //         centerMenuItem.name, 
-    //         centerMenuItem.content
-    //     );
-    // });
 
     $(".menu-item").click(function(){
         var isMiddle = $(this).parent().hasClass("header-middle");
@@ -49,12 +46,7 @@ function initializeHexaMenu(menuContent){
         }
     }
 
-    function activateButton(activatedMenuItem){
-        var headerBottom = ".header-bottom";
-        var headerMiddle = ".header-middle";
-        var headerTop = ".header-top";
-        var menuDiv = $("#HexaMenu");
-        var contentDiv = $("#Content");
+    function activateButton(activatedMenuItem){        
         var activatedButton = activatedMenuItem.div;
         var rightmostMenuItem = $(activatedButton).prev();
         var xOfMid = $(centerMenuItem.div).offset().left;
@@ -65,7 +57,7 @@ function initializeHexaMenu(menuContent){
         var temp = document.createElement("div");
         
         temp.className = "temp-div";
-        contentDiv.append(temp);
+        $(contentClass).append(temp);
         $(temp).load(activatedMenuItem.content + " #Content");
         swap();
 
@@ -85,7 +77,7 @@ function initializeHexaMenu(menuContent){
                     $(centerMenuItem.div).removeAttr("style");
                     $(centerMenuItem.div).promise().done(function() {
                         if(rightmostMenuItem.length == 0){
-                            $(centerMenuItem.div).prependTo(menuDiv);
+                            $(centerMenuItem.div).prependTo($(menuClass));
                         }
                         else{
                             $(centerMenuItem.div).insertAfter(rightmostMenuItem);
@@ -104,11 +96,11 @@ function initializeHexaMenu(menuContent){
                     $(activatedButton).promise().done(function() {
                         $(activatedButton).animate({bottom: "-=40"});
                         $(activatedButton).promise().done(function() {
-                            $(headerBottom).effect("highlight", {color: activatedMenuItem.color}, 1000);
+                            $(headerBottomClass).effect("highlight", {color: activatedMenuItem.color}, 1000);
                             $(activatedButton).removeAttr("style");
-                            $(headerMiddle).append(activatedButton);
+                            $(headerMiddleClass).append(activatedButton);
                             centerMenuItem = activatedMenuItem;
-                            contentDiv.html($(temp).find("#Content").html());
+                            $(contentClass).html($(temp).find(contentClass).html());
                             doneMovingCenterItem = true;
                             doneMoving = doneMovingCenterItem && doneMovingActivatedItem;
                             window.history.pushState(activatedMenuItem.name, activatedMenuItem.name, activatedMenuItem.content);
