@@ -94,7 +94,7 @@ function initializeHexaMenu(menuContent){
                 $(activatedButton).promise().done(function() {
                     $(activatedButton).animate({left: xDestination});
                     $(activatedButton).promise().done(function() {
-                        $(activatedButton).animate({bottom: "-=40"});
+                        $(activatedButton).animate({bottom: "-=42"});
                         $(activatedButton).promise().done(function() {
                             $(headerBottomClass).effect("highlight", {color: activatedMenuItem.color}, 1000);
                             $(activatedButton).removeAttr("style");

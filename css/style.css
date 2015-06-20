@@ -167,6 +167,11 @@ ul {
         display: none;
     }
 
+    .contact img {
+        height: 50%;
+        width: 50%;
+    }
+
     .introduction img {
         float: none;
         margin: 0 auto;
