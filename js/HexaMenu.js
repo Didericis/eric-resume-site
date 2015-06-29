@@ -2,23 +2,23 @@ function initializeHexaMenu(){
     var menuContent = {
         "Home": {
             url: "index.html",
-            icon: "<i class=\"fa fa-home\"></i>"
+            icon: "<i class='fa fa-home'></i>"
         },
         "Toolbox": {
             url: "toolbox.html",
-            icon: "<i class=\"fa fa-wrench\"></i>"
+            icon: "<i class='fa fa-wrench'></i>"
         },
         "Blog": {
             url: "blog.html",
-            icon: "<i class=\"fa fa-pencil-square-o\"></i>"
+            icon: "<i class='fa fa-pencil-square-o'></i>"
         },
         "Contact": {
             url: "contact.html",
-            icon: "<i class=\"fa fa-phone\"></i>"
+            icon: "<i class='fa fa-phone'></i>"
         },
         "Resume": {
             url: "resume.html",
-            icon: "<i class=\"fa fa-user\"></i>"
+            icon: "<i class='fa fa-user'></i>"
         }
     }
 
@@ -117,7 +117,7 @@ function initializeHexaMenu(){
         $(menuItemFramework).load(menuItemURL + " #menu-item", function(){
             for (var name in menuContent){
                 var menuItemDiv = $(menuItemFramework).find("#menu-item").clone().prop("id", name);
-                menuItemDiv.find("img").append(menuContent[name].icon);
+                menuItemDiv.find(".menu-item-middle").append(menuContent[name].icon);
                 if (name != centerMenuName){
                     menuItems[name] = createMenuItem($(menuItemDiv), menuContent[name].url, getLocalOrder(name, orderNum), name);
                     orderNum += 1;
