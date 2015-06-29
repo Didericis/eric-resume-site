@@ -22,11 +22,16 @@ function initializeHexaMenu(){
         }
     }
 
-    var headerSelector = "#Header";
     var headerBottomClass = ".header-bottom";
     var headerMiddleClass = ".header-middle";
     var menuClass = ".menu";
+    var menuItemClass = ".menu-item";
+    var menuItemMiddleClass = ".menu-item-middle";
     var contentClass = ".content";
+
+    var menuItemID = "#menu-item";
+    var contentID = "#Content";
+    var headerID = "#Header";
 
     var headerURL = "header.html";
     var menuItemURL = "menuItem.html";
@@ -40,8 +45,6 @@ function initializeHexaMenu(){
     function swapMenuOrder(name1, name2){
         var order1 = getLocalOrder(name1);
         var order2 = getLocalOrder(name2);
-
-        console.log("Swap " + name1 + " with " + name2 + ": " + order1 + " <-> " + order2);
 
         if (menuItems[name1]){
             menuItems[name1].order = order2;
@@ -81,7 +84,6 @@ function initializeHexaMenu(){
 
         try{
             order = localStorage.getItem(name);
-            console.log(name + ": " + order);
         }
         catch(e){
             console.log("Cannot get local storage.");
@@ -113,11 +115,10 @@ function initializeHexaMenu(){
         var menuItemFramework = document.createElement("div");
         var orderNum = 0;
 
-        //
-        $(menuItemFramework).load(menuItemURL + " #menu-item", function(){
+        $(menuItemFramework).load(menuItemURL + " " + menuItemID, function(){
             for (var name in menuContent){
-                var menuItemDiv = $(menuItemFramework).find("#menu-item").clone().prop("id", name);
-                menuItemDiv.find(".menu-item-middle").append(menuContent[name].icon);
+                var menuItemDiv = $(menuItemFramework).find(menuItemID).clone().prop("id", name);
+                menuItemDiv.find(menuItemMiddleClass).append(menuContent[name].icon);
                 if (name != centerMenuName){
                     menuItems[name] = createMenuItem($(menuItemDiv), menuContent[name].url, getLocalOrder(name, orderNum), name);
                     orderNum += 1;
@@ -139,8 +140,8 @@ function initializeHexaMenu(){
     function setUpClickFunc(){
         var isMiddle;
 
-        $(".menu-item").click(function(){
-            isMiddle = $(this).parent().hasClass("header-middle");
+        $(menuItemClass).click(function(){
+            isMiddle = $(this).parent().hasClass(headerMiddleClass.substring(1));
             if (doneMoving && !isMiddle){ activateButton(getMenuItem(this)); }
         });
     }
@@ -170,7 +171,7 @@ function initializeHexaMenu(){
 
     function colorMenuItems(){
         for (var name in menuItems){
-            menuItems[name].color = $(menuItems[name].div).find(".menu-item-middle").css("background-color");
+            menuItems[name].color = $(menuItems[name].div).find(menuItemMiddleClass).css("background-color");
         }
     }
 
@@ -181,16 +182,17 @@ function initializeHexaMenu(){
             if(menuContent[itemName].url === curURL.substring(curURL.lastIndexOf('/')+1)) {
                 return itemName;
             }
-        } 
+        }
+        //Home should be the only 
         return "Home";       
     }
 
     function getHeader(callback){
-        $(headerSelector).load(headerURL + " #Header > *", callback);
+        $(headerID).load(headerURL + " " + headerID + " > *", callback);
     }
 
     function setCenterItem(itemName){
-        var centerItemEl = $(".header-middle .menu-item");
+        var centerItemEl = $(headerMiddleClass + " " + menuItemClass);
         var centerItemName = centerItemEl[0].id;
         var newCenterItem;
         var rightmostMenuItem;
@@ -232,7 +234,7 @@ function initializeHexaMenu(){
         
         temp.className = "temp-div";
         $(contentClass).append(temp);
-        $(temp).load(activatedMenuItem.content + " #Content");
+        $(temp).load(activatedMenuItem.content + " " + contentID);
         swap();
 
         function swap(){

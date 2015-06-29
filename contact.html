@@ -2,22 +2,11 @@
 <html>
     <head>
         <title>Eric Bauerfeld</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="img/favicon.ico" rel="shortcut icon" type="image/x-icon">
-
-        <link rel='stylesheet' href='css/style.css'/>
-        <link rel='stylesheet' href='css/hexaMenu.css'/>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-
-        <link href='//fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
-        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
-        <link href='//fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
-
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-        <script src="js/HexaMenu.js"></script>
+        <script src="js/LoadHead.js"></script>
+        <script>loadHead("resources.json");</script>
     </head>
-    <body>
+    <body hidden>
         <div id="Header" class="header"></div>
         <div id="Content" class="content">
             <h1>Contact</h1>
@@ -35,5 +24,4 @@
             </div>
         </div>
     </body>
-    <script>$(document).ready(initializeHexaMenu);</script>
 </html>

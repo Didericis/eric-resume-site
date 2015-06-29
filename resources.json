@@ -1,0 +1,15 @@
+{
+    "css": [
+        "css/style.css",
+        "css/hexaMenu.css",
+        "//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css",
+        "//fonts.googleapis.com/css?family=Amatic+SC",
+        "//fonts.googleapis.com/css?family=Oswald",
+        "//fonts.googleapis.com/css?family=Shadows+Into+Light"
+    ],
+    "js": [
+        "//ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js",
+        "js/HexaMenu.js"
+    ],
+    "icon": "img/favicon.ico"
+}
