@@ -14,48 +14,7 @@
         <script src="js/HexaMenu.js"></script>
     </head>
     <body>
-        <div id="Header" class="header">
-            <div id="HexaMenu" class="menu">
-                <div id="Home" class="menu-item">
-                    <div class="menu-item-top"></div>
-                    <div class="menu-item-middle">
-                        <img src="img/homeIcon.png">
-                    </div>
-                    <div class="menu-item-bottom"></div>
-                </div>
-                <div id="Resume" class="menu-item">
-                    <div class="menu-item-top"></div>
-                    <div class="menu-item-middle">
-                        <img src="img/resumeIcon.png">
-                    </div>
-                    <div class="menu-item-bottom"></div>
-                </div>
-                <div id="Toolbox" class="menu-item">
-                    <div class="menu-item-top"></div>
-                    <div class="menu-item-middle">
-                        <img src="img/toolboxIcon.png">
-                    </div>
-                    <div class="menu-item-bottom"></div>
-                </div>
-                <div id="Contact" class="menu-item">
-                    <div class="menu-item-top"></div>
-                    <div class="menu-item-middle">
-                        <img src="img/contactIcon.png">
-                    </div>
-                    <div class="menu-item-bottom"></div>
-                </div>
-            </div>
-            <div class="header-middle">
-                <div id="Blog" class="menu-item">
-                    <div class="menu-item-top"></div>
-                    <div class="menu-item-middle">
-                        <img src="img/blogIcon.png">
-                    </div>
-                    <div class="menu-item-bottom"></div>
-                </div>
-            </div>
-            <div class="header-bottom"></div>
-        </div>
+        <div id="Header" class="header"></div>
         <div id="Content" class="content">
             <h1>Blog</h1>
             <section class="blog-entry" id="smooth-page-loading">
@@ -72,15 +31,5 @@
             </section>
         </div>
     </body>
-    <script>
-        $(document).ready(function(){
-            initializeHexaMenu({
-                "Home": "index.html",
-                "Toolbox": "toolbox.html",
-                "Blog": "blog.html",
-                "Contact": "contact.html",
-                "Resume": "resume.html"
-            });
-        });
-    </script>
+    <script>$(document).ready(initializeHexaMenu);</script>
 </html>

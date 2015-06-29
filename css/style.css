@@ -31,6 +31,10 @@ ul {
     background-color: #5E5E0C;
 }
 
+#Blog .menu-item-middle {
+    background-color: #5E5E0C;
+}
+
 #Blog .menu-item-bottom {
     border-top-color: #5E5E0C;
 }
@@ -165,6 +169,11 @@ ul {
 @media screen and (max-width: 800px){
     .contact p {
         display: none;
+    }
+
+    .contact img {
+        width: 50%;
+        height: 50%;
     }
 
     .introduction img {
