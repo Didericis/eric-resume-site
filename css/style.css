@@ -22,6 +22,7 @@ h1, h2 {
 i {
     color: white;
     font-size: 100px !important;
+    cursor: default;
 }
 
 ul {
