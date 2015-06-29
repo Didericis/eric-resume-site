@@ -55,6 +55,12 @@
     z-index: 3;
 }
 
+.menu-item i{
+    font-size: 35px !important;
+    color: black;
+    cursor: default;
+}
+
 .menu-item-bottom {
     width: 0;
     border-top: 20px solid white;
@@ -105,12 +111,12 @@
 
 @media screen and (max-width: 500px){
     .header-bottom {
-        height: 30px;
+        height: 20px;
         margin-bottom: 15px;
     }
 
     .header-middle {
-        height: 15px;
+        height: 20px;
     }
 
     .header-top {
@@ -123,6 +129,10 @@
 
     .menu-item {
         width: 60px;
+    }
+
+    .menu-item i{
+        font-size: 20px !important;
     }
 
     .menu-item-bottom {
